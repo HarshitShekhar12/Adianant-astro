@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultations | Adianant Astro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        ul.features { list-style: none; margin: 20px 0; color: #e2e8f0; }
+        ul.features li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.5; font-size: 0.95rem; }
+        ul.features li::before { content: '✨'; position: absolute; left: 0; top: 2px; font-size: 0.9rem; }
+        .badge { background: linear-gradient(90deg, #f6e05e, #fbd38d); color: #1a202c; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); white-space: nowrap;}
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="WhatsApp Image 2026-09-10 at 11.16.48.jpeg" alt="Logo" class="nav-logo">
+            Adianant Astro
+        </a>
+        
+        <!-- Mobile Hamburger Icon -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html"><span class="lang-en">Home</span><span class="lang-hi">होम</span></a></li>
+                <li><a href="consultations.html" style="color: #fbd38d;"><span class="lang-en">Consultations</span><span class="lang-hi">परामर्श</span></a></li>
+                <li><a href="shop.html"><span class="lang-en">Gemstones</span><span class="lang-hi">रत्न / Shop</span></a></li>
+                <li><a href="about.html"><span class="lang-en">About Us</span><span class="lang-hi">हमारे बारे में</span></a></li>
+            </ul>
+            <button id="langToggleBtn" class="lang-btn">🌐 <span class="lang-en">हिंदी</span><span class="lang-hi">English</span></button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title"><span class="notranslate">Kundali Consultation</span> Packages</h2>
+        
+        <div class="grid-3">
+            <div class="glass-card">
+                <h3>Basic Reading</h3>
+                <div class="price" style="font-size: 2.5rem; font-weight: bold; text-align: center; margin: 15px 0;">₹500</div>
+                <ul class="features lang-en">
+                    <li>Birth Chart & Ascendant Analysis</li>
+                    <li>Zodiac Sign & Planetary Positions</li>
+                    <li>Personality & Nature Insights</li>
+                    <li>General Career & Business Outlook</li>
+                    <li>General Marriage Indications</li>
+                    <li>General Wealth & Finance Analysis</li>
+                    <li>Major Planetary Yogas and Doshas</li>
+                    <li>2–3 Simple Astrological Remedies</li>
+                    <li>Answer to 1 Important Question</li>
+                    <li>Short Kundali Report</li>
+                </ul>
+                <ul class="features lang-hi">
+                    <li>जन्म कुंडली एवं लग्न विश्लेषण</li>
+                    <li>राशि एवं ग्रह स्थिति</li>
+                    <li>व्यक्तित्व एवं स्वभाव</li>
+                    <li>Career/Business का सामान्य संकेत</li>
+                    <li>विवाह का सामान्य संकेत</li>
+                    <li>धन संबंधी सामान्य विश्लेषण</li>
+                    <li>प्रमुख ग्रह योग/दोष</li>
+                    <li>2–3 सरल ज्योतिषीय उपाय</li>
+                    <li>1 महत्वपूर्ण प्रश्न का उत्तर</li>
+                    <li>Short Kundali Report</li>
+                </ul>
+                <button class="wa-btn" onclick="book('Basic Kundali Reading', '500')">
+                    <span class="lang-en">Book via WhatsApp</span><span class="lang-hi">WhatsApp द्वारा बुक करें</span>
+                </button>
+            </div>
+
+            <div class="glass-card card-premium" style="border-color: #fbd38d;">
+                <div class="badge">⭐ MOST RECOMMENDED</div>
+                <h3>Premium Analysis</h3>
+                <div class="price" style="font-size: 2.5rem; font-weight: bold; text-align: center; margin: 15px 0;">₹1,100</div>
+                <ul class="features lang-en">
+                    <li>Detailed Birth Chart & Ascendant Analysis</li>
+                    <li>Career & Business — Detailed Analysis</li>
+                    <li>Marriage & Relationship — Detailed Analysis</li>
+                    <li>Finance & Wealth — Detailed Analysis</li>
+                    <li>Education & Career Guidance</li>
+                    <li>Progeny & Childbirth Indications</li>
+                    <li>Dasha & Antardasha Analysis</li>
+                    <li>Current Planetary Transit Analysis</li>
+                    <li>Potential Timing for Marriage and Career</li>
+                    <li>Analysis of Major Yogas and Doshas</li>
+                    <li>Personalized Astrological Remedies</li>
+                    <li>Answers to 3 Important Questions</li>
+                    <li>Detailed PDF Report</li>
+                    <li>Approx. 30 Minutes Consultation</li>
+                </ul>
+                <ul class="features lang-hi">
+                    <li>जन्म कुंडली, लग्न एवं राशि का विस्तृत विश्लेषण</li>
+                    <li>Career & Business — Detailed Analysis</li>
+                    <li>Marriage — Detailed Analysis</li>
+                    <li>Finance/Wealth — Detailed Analysis</li>
+                    <li>Education & Career guidance</li>
+                    <li>संतान योग का विश्लेषण</li>
+                    <li>दशा एवं अंतरदशा विश्लेषण</li>
+                    <li>वर्तमान गोचर विश्लेषण</li>
+                    <li>विवाह/करियर की संभावित timing</li>
+                    <li>प्रमुख योग एवं दोष</li>
+                    <li>Personalized Remedies</li>
+                    <li>3 महत्वपूर्ण प्रश्नों के उत्तर</li>
+                    <li>Detailed PDF Report</li>
+                    <li>लगभग 30 मिनट Consultation</li>
+                </ul>
+                <button class="wa-btn" onclick="book('Premium Kundali Analysis', '1100')">
+                    <span class="lang-en">Book via WhatsApp</span><span class="lang-hi">WhatsApp द्वारा बुक करें</span>
+                </button>
+            </div>
+
+            <div class="glass-card">
+                <h3>Complete Consultation</h3>
+                <div class="price" style="font-size: 2.5rem; font-weight: bold; text-align: center; margin: 15px 0;">₹2,100</div>
+                <ul class="features lang-en">
+                    <li>Complete Life Analysis</li>
+                    <li>Career, Business & Finance — Detailed Analysis</li>
+                    <li>Marriage & Relationship — Detailed Analysis</li>
+                    <li>Education & Career — Detailed Guidance</li>
+                    <li>Progeny & Family Relations Analysis</li>
+                    <li>Detailed Dasha & Antardasha Analysis</li>
+                    <li>Potential Timing of Major Life Events</li>
+                    <li>1 Year Detailed Transit Forecast</li>
+                    <li>Detailed Analysis of Major Yogas and Doshas</li>
+                    <li>Detailed Personalized Remedies</li>
+                    <li>Answers to 7 Important Questions</li>
+                    <li>Complete PDF Kundali Report</li>
+                    <li>Approx. 60 Minutes Personal Consultation</li>
+                </ul>
+                <ul class="features lang-hi">
+                    <li>Complete Life Analysis</li>
+                    <li>Career, Business & Finance — Detailed Analysis</li>
+                    <li>Marriage & Relationship — Detailed Analysis</li>
+                    <li>Education & Career — Detailed Guidance</li>
+                    <li>संतान योग एवं परिवार संबंधी विश्लेषण</li>
+                    <li>दशा एवं अंतरदशा का विस्तृत विश्लेषण</li>
+                    <li>प्रमुख जीवन घटनाओं की संभावित timing</li>
+                    <li>1 Year Detailed Transit Forecast</li>
+                    <li>प्रमुख योग एवं दोष का विस्तृत विश्लेषण</li>
+                    <li>Detailed Personalized Remedies</li>
+                    <li>7 महत्वपूर्ण प्रश्नों के उत्तर</li>
+                    <li>Complete PDF Kundali Report</li>
+                    <li>लगभग 60 मिनट Personal Consultation</li>
+                </ul>
+                <button class="wa-btn" onclick="book('Complete Kundali Consultation', '2100')">
+                    <span class="lang-en">Book via WhatsApp</span><span class="lang-hi">WhatsApp द्वारा बुक करें</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container" style="min-height: auto;">
+            <p class="lang-en" style="font-size: 0.95rem; color: #a0aec0; font-style: italic; max-width: 800px; margin: 0 auto 30px; line-height: 1.6;">
+                Professional Note: Astrological consultation is based on guidance and possibilities. No 100% guarantee of any result is claimed.
+            </p>
+            <p class="lang-hi" style="font-size: 0.95rem; color: #a0aec0; font-style: italic; max-width: 800px; margin: 0 auto 30px; line-height: 1.6;">
+                Professional Note: ज्योतिषीय परामर्श मार्गदर्शन एवं संभावनाओं पर आधारित है। किसी भी परिणाम की 100% गारंटी का दावा नहीं किया जाता।
+            </p>
+            <div style="color: #fbd38d; font-size: 1.2rem; line-height: 1.8;">
+                <strong style="font-size: 1.5rem; font-family: 'Cinzel', serif;">Adianant Astro</strong><br>
+                <span style="color: #e2e8f0; font-size: 1rem;">Vrindavan Garden 60ft road, Krishi nagar, patna-800025</span><br>
+                Mobile: <a href="tel:9453980458" style="color: #25D366; text-decoration: none; font-weight: bold;">9453980458</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.85rem; color: #4a5568;">&copy; 2026 Adianant Astro. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active');
+            navMenu.classList.toggle('active');
+        });
+
+        const langToggleBtn = document.getElementById('langToggleBtn');
+        const currentLang = localStorage.getItem('siteLang') || 'en';
+        if (currentLang === 'hi') { document.body.classList.add('hi'); }
+        langToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('hi');
+            if (document.body.classList.contains('hi')) {
+                localStorage.setItem('siteLang', 'hi');
+            } else {
+                localStorage.setItem('siteLang', 'en');
+            }
+        });
+
+        function book(packageName, price) {
+            const phoneNumber = "919453980458"; 
+            const message = `Hello Adianant Astro, I would like to book the "${packageName}" for ₹${price}. Please guide me with the next steps for payment and details required.`;
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>

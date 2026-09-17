@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adianant Astro | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-logo { width: 200px; height: 200px; border-radius: 50%; display: block; margin: 40px auto 20px; border: 2px solid rgba(251, 211, 141, 0.8); box-shadow: 0 0 30px rgba(251, 211, 141, 0.4); animation: float 6s ease-in-out infinite; }
+        .title-main { font-size: 4.5rem; text-shadow: 0 0 20px rgba(251, 211, 141, 0.5), 2px 2px 10px rgba(0,0,0,0.9); }
+        .subtitle { text-align: center; font-size: 1.3rem; margin-bottom: 50px; color: #e2e8f0; font-weight: 300; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="WhatsApp Image 2026-09-10 at 11.16.48.jpeg" alt="Logo" class="nav-logo">
+            Adianant Astro
+        </a>
+        
+        <!-- Mobile Hamburger Icon -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html" style="color: #fbd38d;"><span class="lang-en">Home</span><span class="lang-hi">होम</span></a></li>
+                <li><a href="consultations.html"><span class="lang-en">Consultations</span><span class="lang-hi">परामर्श</span></a></li>
+                <li><a href="shop.html"><span class="lang-en">Gemstones</span><span class="lang-hi">रत्न / Shop</span></a></li>
+                <li><a href="about.html"><span class="lang-en">About Us</span><span class="lang-hi">हमारे बारे में</span></a></li>
+            </ul>
+            <button id="langToggleBtn" class="lang-btn">🌐 <span class="lang-en">हिंदी</span><span class="lang-hi">English</span></button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="WhatsApp Image 2026-09-10 at 11.16.48.jpeg" alt="Adianant Astro Logo" class="hero-logo">
+        <h1 class="title-main">Adianant Astro</h1>
+        <p class="subtitle lang-en">Guiding Stars, Empowering Lives.</p>
+        <p class="subtitle lang-hi">सितारों का मार्गदर्शन, जीवन का सशक्तिकरण।</p>
+
+        <h2 class="section-title lang-en">Why Choose Adianant?</h2>
+        <h2 class="section-title lang-hi">Adianant को क्यों चुनें?</h2>
+
+        <div class="grid-3">
+            <div class="glass-card" style="text-align: center;">
+                <span style="font-size: 3rem;">📊</span>
+                <h3 class="lang-en">Analytical Precision</h3>
+                <h3 class="lang-hi">Analytical Precision</h3>
+                <p class="lang-en" style="color: #cbd5e0;">Rigorous, research-oriented mindset applied to planetary data for flawless calculations.</p>
+                <p class="lang-hi" style="color: #cbd5e0;">निर्दोष गणनाओं के लिए ग्रहीय डेटा (Planetary Data) पर लागू कठोर, शोध-उन्मुख (Research-oriented) मानसिकता।</p>
+            </div>
+            <div class="glass-card" style="text-align: center;">
+                <span style="font-size: 3rem;">📜</span>
+                <h3 class="lang-en">Authentic Roots</h3>
+                <h3 class="lang-hi">Authentic Roots</h3>
+                <p class="lang-en" style="color: #cbd5e0;">Deeply rooted in the purest traditions of Vedic Astrology. No generic software predictions.</p>
+                <p class="lang-hi" style="color: #cbd5e0;">Vedic Astrology की शुद्धतम परंपराओं में गहराई से निहित। कोई सामान्य सॉफ़्टवेयर भविष्यवाणियां नहीं।</p>
+            </div>
+            <div class="glass-card" style="text-align: center;">
+                <span style="font-size: 3rem;">🎯</span>
+                <h3 class="lang-en">Actionable Remedies</h3>
+                <h3 class="lang-hi">Actionable Remedies</h3>
+                <p class="lang-en" style="color: #cbd5e0;">Highly personalized, practical, and easy-to-perform remedies designed to clear obstacles.</p>
+                <p class="lang-hi" style="color: #cbd5e0;">बाधाओं को दूर करने के लिए डिज़ाइन किए गए अत्यधिक व्यक्तिगत, व्यावहारिक और आसानी से किए जाने वाले Astrological उपाय।</p>
+            </div>
+        </div>
+
+        <div class="grid-3" style="margin-top: 50px;">
+            <a href="consultations.html" class="wa-btn" style="background: rgba(251, 211, 141, 0.2); border-color: #fbd38d; color: #fbd38d;">
+                <span class="lang-en">Book a Consultation</span><span class="lang-hi">Consultation बुक करें</span>
+            </a>
+            <a href="shop.html" class="wa-btn" style="background: rgba(251, 211, 141, 0.2); border-color: #fbd38d; color: #fbd38d;">
+                <span class="lang-en">Visit Astro Shop</span><span class="lang-hi">Astro Shop देखें</span>
+            </a>
+            <a href="about.html" class="wa-btn" style="background: rgba(251, 211, 141, 0.2); border-color: #fbd38d; color: #fbd38d;">
+                <span class="lang-en">Meet Aaditya Arup</span><span class="lang-hi">Aaditya Arup से मिलें</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="min-height: auto;">
+            <p class="lang-en" style="font-size: 0.95rem; color: #a0aec0; font-style: italic; max-width: 800px; margin: 0 auto 30px; line-height: 1.6;">
+                Professional Note: Astrological consultation is based on guidance and possibilities. No 100% guarantee of any result is claimed.
+            </p>
+            <p class="lang-hi" style="font-size: 0.95rem; color: #a0aec0; font-style: italic; max-width: 800px; margin: 0 auto 30px; line-height: 1.6;">
+                Professional Note: ज्योतिषीय परामर्श मार्गदर्शन एवं संभावनाओं पर आधारित है। किसी भी परिणाम की 100% गारंटी का दावा नहीं किया जाता।
+            </p>
+            
+            <div style="color: #fbd38d; font-size: 1.2rem; line-height: 1.8;">
+                <strong style="font-size: 1.5rem; font-family: 'Cinzel', serif;">Adianant Astro</strong><br>
+                <span style="color: #e2e8f0; font-size: 1rem;">Vrindavan Garden 60ft road, Krishi nagar, patna-800025</span><br>
+                Mobile: <a href="tel:9453980458" style="color: #25D366; text-decoration: none; font-weight: bold;">9453980458</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.85rem; color: #4a5568;">&copy; 2026 Adianant Astro. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Global Scripts (Language & Mobile Menu) -->
+    <script>
+        // Mobile Menu Script
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Language Script
+        const langToggleBtn = document.getElementById('langToggleBtn');
+        const currentLang = localStorage.getItem('siteLang') || 'en';
+        if (currentLang === 'hi') { document.body.classList.add('hi'); }
+        langToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('hi');
+            if (document.body.classList.contains('hi')) {
+                localStorage.setItem('siteLang', 'hi');
+            } else {
+                localStorage.setItem('siteLang', 'en');
+            }
+        });
+    </script>
+</body>
+</html>
