@@ -82,32 +82,75 @@ body.hi .lang-en { display: none !important; }
 body.hi .lang-hi { display: block !important; }
 body.hi span.lang-hi, body.hi a.lang-hi { display: inline !important; }
 body.hi li.lang-hi { display: list-item !important; }
-body.hi h1.lang-hi, body.hi h2.lang-hi, body.hi h3.lang-hi, body.hi h4.lang-hi, body.hi p.lang-hi { display: block !important; }
+body.hi h1.lang-hi, body.hi h2.lang-hi, body.hi h3.lang-hi, body.hi h4.lang-hi, body.hi p.lang-hi, body.hi div.lang-hi { display: block !important; }
 
 /* =========================================
-   MOBILE RESPONSIVENESS (HAMBURGER MENU)
+   UPI PAYMENT MODAL STYLES
+   ========================================= */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(8px);
+    z-index: 2000; justify-content: center; align-items: center;
+}
+.modal-content {
+    background: rgba(15, 20, 35, 0.95); border: 2px solid #fbd38d;
+    border-radius: 15px; padding: 30px 20px; text-align: center;
+    max-width: 380px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    position: relative; animation: slideDown 0.3s ease-out;
+}
+@keyframes slideDown { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.close-modal {
+    position: absolute; top: 10px; right: 15px; font-size: 1.8rem;
+    color: #cbd5e0; cursor: pointer; line-height: 1;
+}
+.close-modal:hover { color: #fbd38d; }
+.qr-img { width: 220px; height: 220px; border-radius: 10px; margin: 15px auto; border: 3px solid #fbd38d; display: block; object-fit: cover;}
+.upi-text { font-size: 1.1rem; color: #fbd38d; margin-bottom: 15px; font-weight: bold; background: rgba(251, 211, 141, 0.1); padding: 8px; border-radius: 8px;}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (IPHONE FIXES)
    ========================================= */
 @media (max-width: 768px) {
-    .navbar { padding: 15px 20px; }
-    .menu-toggle { display: flex; } /* Show Hamburger */
+    /* Navbar Shrink */
+    .navbar { padding: 10px 15px; }
+    .nav-logo { width: 35px; height: 35px; }
+    .nav-brand { font-size: 1.2rem; }
+    .menu-toggle { display: flex; } 
     
     .nav-menu {
-        position: fixed; top: 76px; left: -100%; width: 100%; height: auto;
-        background: rgba(10, 15, 30, 0.95); backdrop-filter: blur(16px);
-        flex-direction: column; padding: 30px 20px; gap: 20px;
+        position: fixed; top: 60px; left: -100%; width: 100%; height: auto;
+        background: rgba(10, 15, 30, 0.98); backdrop-filter: blur(16px);
+        flex-direction: column; padding: 25px 20px; gap: 15px;
         transition: 0.4s ease-in-out; border-bottom: 1px solid rgba(251, 211, 141, 0.3);
     }
-    
-    .nav-menu.active { left: 0; } /* Slides menu in when active */
-    
-    .nav-links { flex-direction: column; align-items: center; width: 100%; margin: 0; gap: 25px; }
-    .nav-links li { width: 100%; text-align: center; }
-    .lang-btn { margin: 15px auto 0; display: block; font-size: 1rem; padding: 10px 30px; }
+    .nav-menu.active { left: 0; }
+    .nav-links { flex-direction: column; align-items: center; width: 100%; margin: 0; gap: 20px; }
+    .lang-btn { margin: 10px auto 0; display: block; font-size: 0.9rem; padding: 8px 25px; }
 
-    /* Hamburger Animation to 'X' */
+    /* Hamburger Animation */
     .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
     .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
     .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-    .section-title { font-size: 2rem; }
+    /* iPhone Content Shrink - Fixes overlapping & weird sizing */
+    body { padding-top: 60px; }
+    .container { padding: 10px; }
+    .title-main { font-size: 2.2rem !important; margin-top: 15px !important; }
+    .subtitle { font-size: 0.95rem !important; margin-bottom: 30px !important; padding: 0 10px; }
+    .section-title { font-size: 1.8rem !important; margin: 30px 0 25px !important; }
+    
+    .grid-3, .grid-2 { gap: 20px !important; }
+    .glass-card { padding: 20px 15px !important; }
+    .glass-card h3 { font-size: 1.4rem !important; }
+    
+    /* Shrinking Consultation specific elements */
+    .price { font-size: 2rem !important; margin: 10px 0 !important; }
+    ul.features li { font-size: 0.85rem !important; margin-bottom: 8px !important; line-height: 1.4 !important; padding-left: 20px !important;}
+    
+    /* Shrink Buttons */
+    .wa-btn { padding: 12px !important; font-size: 1rem !important; margin-top: 15px !important; }
+    
+    /* Shrink Popup on small phones */
+    .modal-content { padding: 20px 15px; }
+    .qr-img { width: 180px; height: 180px; }
 }
