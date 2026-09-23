@@ -70,7 +70,8 @@
                     <li>1 महत्वपूर्ण प्रश्न का उत्तर</li>
                     <li>Short Kundali Report</li>
                 </ul>
-                <button class="wa-btn" onclick="openPaymentModal('Basic Kundali Reading', '500')">
+                <!-- CHANGED TO OPEN FORM MODAL FIRST -->
+                <button class="wa-btn" onclick="openFormModal('Basic Kundali Reading', '500')">
                     <span class="lang-en">Book via WhatsApp</span><span class="lang-hi">WhatsApp द्वारा बुक करें</span>
                 </button>
             </div>
@@ -111,7 +112,7 @@
                     <li>Detailed PDF Report</li>
                     <li>लगभग 30 मिनट Consultation</li>
                 </ul>
-                <button class="wa-btn" onclick="openPaymentModal('Premium Kundali Analysis', '1100')">
+                <button class="wa-btn" onclick="openFormModal('Premium Kundali Analysis', '1100')">
                     <span class="lang-en">Book via WhatsApp</span><span class="lang-hi">WhatsApp द्वारा बुक करें</span>
                 </button>
             </div>
@@ -149,26 +150,63 @@
                     <li>Complete PDF Kundali Report</li>
                     <li>लगभग 60 मिनट Personal Consultation</li>
                 </ul>
-                <button class="wa-btn" onclick="openPaymentModal('Complete Kundali Consultation', '2100')">
+                <button class="wa-btn" onclick="openFormModal('Complete Kundali Consultation', '2100')">
                     <span class="lang-en">Book via WhatsApp</span><span class="lang-hi">WhatsApp द्वारा बुक करें</span>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- UPI PAYMENT MODAL -->
+    <!-- STEP 1: FORM MODAL -->
+    <div class="modal-overlay" id="formModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModals()">&times;</span>
+            <h3 class="lang-en" style="margin-bottom: 20px;">Enter Birth Details</h3>
+            <h3 class="lang-hi" style="margin-bottom: 20px;">जन्म विवरण दर्ज करें</h3>
+
+            <div class="input-group">
+                <label><span class="lang-en">Customer Name</span><span class="lang-hi">ग्राहक का नाम</span></label>
+                <input type="text" id="custName" class="astro-input" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="input-group">
+                <label><span class="lang-en">Father's Name</span><span class="lang-hi">पिता का नाम</span></label>
+                <input type="text" id="fatherName" class="astro-input" placeholder="e.g. Ramesh Sharma" required>
+            </div>
+            <div class="input-group">
+                <label><span class="lang-en">Date of Birth</span><span class="lang-hi">जन्म तिथि</span></label>
+                <input type="date" id="dob" class="astro-input" required>
+            </div>
+            <div class="input-group">
+                <label><span class="lang-en">Time of Birth</span><span class="lang-hi">जन्म समय</span></label>
+                <input type="time" id="tob" class="astro-input" required>
+            </div>
+            <div class="input-group">
+                <label><span class="lang-en">Place of Birth</span><span class="lang-hi">जन्म स्थान</span></label>
+                <input type="text" id="pob" class="astro-input" placeholder="e.g. Patna, Bihar" required>
+            </div>
+            <div class="input-group">
+                <label><span class="lang-en">Mobile Number</span><span class="lang-hi">मोबाइल नंबर</span></label>
+                <input type="tel" id="mobileNo" class="astro-input" placeholder="e.g. +91 9876543210" required>
+            </div>
+
+            <button class="wa-btn" onclick="proceedToQR()">
+                <span class="lang-en">Proceed to Payment</span>
+                <span class="lang-hi">भुगतान के लिए आगे बढ़ें</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- STEP 2: UPI PAYMENT MODAL -->
     <div class="modal-overlay" id="paymentModal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <span class="close-modal" onclick="closeModals()">&times;</span>
             <h3 class="lang-en" style="margin-bottom: 5px;">Scan & Pay</h3>
             <h3 class="lang-hi" style="margin-bottom: 5px;">स्कैन करें और भुगतान करें</h3>
             
             <p class="lang-en" style="color: #cbd5e0; font-size: 0.95rem;">Total Amount: <strong id="modalAmount" style="color: #fff; font-size: 1.1rem;"></strong></p>
             <p class="lang-hi" style="color: #cbd5e0; font-size: 0.95rem;">कुल राशि: <strong id="modalAmountHi" style="color: #fff; font-size: 1.1rem;"></strong></p>
             
-            <!-- Exact QR Code Image Linked Here -->
             <img src="WhatsApp Image 2026-09-20 at 12.23.25.jpeg" alt="UPI QR Code" class="qr-img">
-            
             <div class="upi-text">UPI ID: 9453980458@upi</div>
             
             <p class="lang-en" style="font-size: 0.85rem; color: #a0aec0; margin-bottom: 15px;">After completing your payment, click below to send us the screenshot on WhatsApp.</p>
@@ -220,35 +258,67 @@
             }
         });
 
-        /* PAYMENT MODAL LOGIC */
+        /* FORM & PAYMENT LOGIC */
         let selectedPackage = "";
         let selectedPrice = "";
+        let clientDetails = {};
 
-        function openPaymentModal(packageName, price) {
+        function openFormModal(packageName, price) {
             selectedPackage = packageName;
             selectedPrice = price;
-            
-            // Set the price text dynamically in the modal
-            document.getElementById('modalAmount').innerText = `₹${price}`;
-            document.getElementById('modalAmountHi').innerText = `₹${price}`;
-            
-            // Display the modal popup
-            document.getElementById('paymentModal').style.display = 'flex';
+            document.getElementById('formModal').style.display = 'flex';
         }
 
-        function closeModal() {
+        function closeModals() {
+            document.getElementById('formModal').style.display = 'none';
             document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function proceedToQR() {
+            // Grab form values
+            const name = document.getElementById('custName').value.trim();
+            const father = document.getElementById('fatherName').value.trim();
+            const dob = document.getElementById('dob').value;
+            const tob = document.getElementById('tob').value;
+            const pob = document.getElementById('pob').value.trim();
+            const mobile = document.getElementById('mobileNo').value.trim();
+
+            // Simple validation check
+            if (!name || !father || !dob || !tob || !pob || !mobile) {
+                alert(document.body.classList.contains('hi') 
+                    ? "कृपया आगे बढ़ने से पहले सभी विवरण भरें।" 
+                    : "Please fill all the details before proceeding.");
+                return;
+            }
+
+            // Save details
+            clientDetails = { name, father, dob, tob, pob, mobile };
+
+            // Hide form, show QR
+            document.getElementById('formModal').style.display = 'none';
+            document.getElementById('modalAmount').innerText = `₹${selectedPrice}`;
+            document.getElementById('modalAmountHi').innerText = `₹${selectedPrice}`;
+            document.getElementById('paymentModal').style.display = 'flex';
         }
 
         function proceedToWhatsApp() {
             const phoneNumber = "919453980458"; 
-            const message = `Hello Adianant Astro, I have paid ₹${selectedPrice} for the "${selectedPackage}". Attached is my payment screenshot. Please guide me with the next steps!`;
             
-            // Open WhatsApp with pre-filled message
+            // Constructing the final message with Form Data
+            const message = `Hello Adianant Astro, I have paid ₹${selectedPrice} for the "${selectedPackage}". Attached is my payment screenshot.
+
+Here are my birth details:
+*Name:* ${clientDetails.name}
+*Father's Name:* ${clientDetails.father}
+*DOB:* ${clientDetails.dob}
+*Time:* ${clientDetails.tob}
+*Place:* ${clientDetails.pob}
+*Mobile:* ${clientDetails.mobile}
+
+Please guide me with the next steps!`;
+
             window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
-            
-            // Close the modal after clicking
-            closeModal();
+            closeModals();
         }
     </script>
 </body>
