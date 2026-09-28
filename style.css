@@ -35,7 +35,7 @@ body {
 .nav-links a:hover { color: #fbd38d; }
 
 /* Mobile Menu Toggle (Hamburger Icon) */
-.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 6px; z-index: 1001; }
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 6px; z-index: 1001; padding: 5px; }
 .menu-toggle .bar { width: 28px; height: 3px; background-color: #fbd38d; transition: all 0.3s ease; border-radius: 5px; }
 
 /* Glassmorphism Card Style */
@@ -90,29 +90,30 @@ body.hi h1.lang-hi, body.hi h2.lang-hi, body.hi h3.lang-hi, body.hi h4.lang-hi, 
 .modal-overlay {
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(8px);
-    z-index: 2000; justify-content: center; align-items: center; padding: 10px;
+    z-index: 2000; justify-content: center; align-items: center; padding: 15px;
 }
 .modal-content {
-    background: rgba(15, 20, 35, 0.95); border: 2px solid #fbd38d;
-    border-radius: 15px; padding: 25px 20px; text-align: center;
-    max-width: 380px; width: 100%; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    background: rgba(15, 20, 35, 0.98); border: 2px solid #fbd38d;
+    border-radius: 15px; padding: 30px 25px; text-align: center;
+    max-width: 400px; width: 100%; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
     position: relative; animation: slideDown 0.3s ease-out;
     max-height: 90vh; overflow-y: auto; 
 }
 @keyframes slideDown { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 .close-modal {
-    position: absolute; top: 10px; right: 15px; font-size: 1.8rem;
-    color: #cbd5e0; cursor: pointer; line-height: 1;
+    position: absolute; top: 12px; right: 15px; font-size: 2rem;
+    color: #cbd5e0; cursor: pointer; line-height: 1; width: 35px; height: 35px; 
+    display: flex; justify-content: center; align-items: center; border-radius: 50%;
 }
-.close-modal:hover { color: #fbd38d; }
-.qr-img { width: 200px; height: 200px; border-radius: 10px; margin: 15px auto; border: 3px solid #fbd38d; display: block; object-fit: cover;}
+.close-modal:hover { color: #fbd38d; background: rgba(255,255,255,0.1); }
+.qr-img { width: 220px; height: 220px; border-radius: 10px; margin: 15px auto; border: 3px solid #fbd38d; display: block; object-fit: cover;}
 .upi-text { font-size: 1.1rem; color: #fbd38d; margin-bottom: 15px; font-weight: bold; background: rgba(251, 211, 141, 0.1); padding: 8px; border-radius: 8px;}
 
 /* Input Forms Styling */
 .input-group { text-align: left; margin-bottom: 12px; }
-.input-group label { font-size: 0.85rem; color: #cbd5e0; margin-left: 5px; margin-bottom: 3px; display: block; }
+.input-group label { font-size: 0.85rem; color: #cbd5e0; margin-left: 5px; margin-bottom: 5px; display: block; }
 .astro-input {
-    width: 100%; padding: 10px 12px; background: rgba(10, 15, 30, 0.6);
+    width: 100%; padding: 12px 15px; background: rgba(10, 15, 30, 0.6);
     border: 1px solid rgba(251, 211, 141, 0.4); border-radius: 8px; color: #fff;
     font-family: 'Poppins', sans-serif; font-size: 0.95rem; transition: 0.3s;
 }
@@ -120,87 +121,65 @@ body.hi h1.lang-hi, body.hi h2.lang-hi, body.hi h3.lang-hi, body.hi h4.lang-hi, 
 .astro-input::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; } 
 
 /* =========================================
-   MOBILE RESPONSIVENESS (AGGRESSIVE SHRINKING FOR IPHONE)
+   MOBILE RESPONSIVENESS (SMOOTHER IPHONE FIXES)
    ========================================= */
 @media (max-width: 768px) {
-    /* Navbar & Menu */
-    .navbar { padding: 10px 15px; }
-    .nav-logo { width: 30px; height: 30px; }
-    .nav-brand { font-size: 1.1rem; }
-    .menu-toggle { display: flex; gap: 4px; } 
-    .menu-toggle .bar { width: 24px; height: 3px; }
+    .navbar { padding: 12px 20px; }
+    .nav-logo { width: 38px; height: 38px; }
+    .nav-brand { font-size: 1.3rem; }
+    .menu-toggle { display: flex; gap: 5px; padding: 5px;} 
+    .menu-toggle .bar { width: 26px; height: 3px; }
     
     .nav-menu {
-        position: fixed; top: 55px; left: -100%; width: 100%; height: auto;
+        position: fixed; top: 65px; left: -100%; width: 100%; height: auto;
         background: rgba(10, 15, 30, 0.98); backdrop-filter: blur(16px);
-        flex-direction: column; padding: 20px 15px; gap: 10px;
+        flex-direction: column; padding: 25px 20px; gap: 15px;
         transition: 0.4s ease-in-out; border-bottom: 1px solid rgba(251, 211, 141, 0.3);
     }
     .nav-menu.active { left: 0; }
-    .nav-links { flex-direction: column; align-items: center; width: 100%; margin: 0; gap: 15px; }
-    .nav-links a { font-size: 0.95rem; }
-    .lang-btn { margin: 10px auto 0; display: block; font-size: 0.85rem; padding: 6px 20px; }
+    .nav-links { flex-direction: column; align-items: center; width: 100%; margin: 0; gap: 20px; }
+    .nav-links a { font-size: 1rem; }
+    .lang-btn { margin: 10px auto 0; display: block; font-size: 0.95rem; padding: 8px 25px; }
 
     /* Hamburger Animation */
     .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* General Body Layout */
-    body { padding-top: 55px; }
-    .container { padding: 10px; }
+    /* Layout Spacing */
+    body { padding-top: 65px; }
+    .container { padding: 15px; }
+    .title-main { font-size: 2.2rem !important; margin-top: 15px !important; }
+    .subtitle { font-size: 0.95rem !important; margin-bottom: 30px !important; padding: 0 10px; }
+    .section-title { font-size: 1.8rem !important; margin: 35px 0 25px !important; }
     
-    /* Hero Text & Logos */
-    .hero-logo { width: 110px !important; height: 110px !important; margin: 25px auto 10px !important; }
-    .title-main { font-size: 1.8rem !important; margin-top: 5px !important; text-shadow: 0 0 10px rgba(251, 211, 141, 0.5) !important; }
-    .subtitle { font-size: 0.85rem !important; margin-bottom: 25px !important; padding: 0 5px; }
-    .section-title { font-size: 1.5rem !important; margin: 30px 0 20px !important; }
-    .section-title::after { font-size: 1rem !important; margin-top: 3px !important; }
+    /* Grid & Cards - Giving more breathing room */
+    .grid-3, .grid-2 { gap: 22px !important; }
+    .glass-card { padding: 22px 18px !important; border-radius: 15px !important; }
+    .glass-card h3 { font-size: 1.3rem !important; margin-bottom: 10px !important; }
+    .glass-card p { font-size: 0.85rem !important; line-height: 1.5 !important; }
 
-    /* Grid & Cards Shrink */
-    .grid-3, .grid-2 { gap: 12px !important; }
-    .glass-card { padding: 15px 12px !important; border-radius: 12px !important; }
-    .glass-card h3 { font-size: 1.15rem !important; margin-bottom: 8px !important; }
+    /* Consultations & Modals */
+    .price { font-size: 1.8rem !important; margin: 8px 0 15px !important; }
+    ul.features li { font-size: 0.85rem !important; margin-bottom: 10px !important; line-height: 1.4 !important; padding-left: 22px !important;}
+    .wa-btn { padding: 14px !important; font-size: 1rem !important; margin-top: 15px !important; border-radius: 10px !important; }
     
-    /* Emojis in Why Choose Us */
-    .glass-card span[style*="font-size: 3rem"] { font-size: 1.8rem !important; display: block; margin-bottom: 8px; }
-    .glass-card p { font-size: 0.8rem !important; line-height: 1.4 !important; }
-
-    /* Consultations Shrink */
-    .price { font-size: 1.4rem !important; margin: 5px 0 10px !important; }
-    ul.features { margin: 10px 0 !important; }
-    ul.features li { font-size: 0.75rem !important; margin-bottom: 6px !important; line-height: 1.3 !important; padding-left: 20px !important;}
-    ul.features li::before { font-size: 0.7rem !important; top: 1px !important; }
-    .badge { font-size: 0.65rem !important; padding: 4px 10px !important; top: -10px !important; }
-    
-    /* Global Buttons */
-    .wa-btn { padding: 10px !important; font-size: 0.9rem !important; margin-top: 10px !important; border-radius: 8px !important; }
-    
-    /* Modal / Form Shrink */
-    .modal-content { padding: 15px; max-width: 95%; border-width: 1px; }
-    .modal-content h3 { font-size: 1.1rem !important; margin-bottom: 12px !important; }
-    .qr-img { width: 130px; height: 130px; border-width: 2px; margin: 10px auto; }
-    .upi-text { font-size: 0.9rem; padding: 6px; margin-bottom: 10px; }
-    
-    .input-group { margin-bottom: 8px; }
-    .input-group label { font-size: 0.75rem; margin-bottom: 2px; }
-    /* Keeping input text at exactly 16px forces iPhone to NOT auto-zoom on the form! */
-    .astro-input { font-size: 16px; padding: 8px 10px; } 
+    .modal-content { padding: 25px 20px; max-width: 100%; }
+    .modal-content h3 { font-size: 1.4rem !important; margin-bottom: 15px !important; }
+    .qr-img { width: 180px; height: 180px; margin: 15px auto; }
+    .astro-input { font-size: 16px; padding: 10px 12px; } /* 16px fixes iOS zoom glitch */
 
     /* Shop Images */
-    .shop-img { height: 140px !important; margin-bottom: 10px !important; }
+    .shop-img { height: 180px !important; margin-bottom: 15px !important; }
 
     /* Admin / About Us */
-    .admin-section { gap: 15px !important; text-align: center; }
-    .admin-photo { min-width: 130px !important; max-width: 130px !important; margin: 0 auto; border-width: 3px !important; }
+    .admin-section { gap: 20px !important; text-align: center; }
+    .admin-photo { min-width: 160px !important; max-width: 160px !important; margin: 0 auto; border-width: 4px !important; }
     .admin-info { min-width: 100% !important; }
-    .admin-info h3 { font-size: 1.5rem !important; text-align: center !important; margin-bottom: 5px !important; }
-    .admin-info h4 { font-size: 0.85rem !important; text-align: center !important; margin-bottom: 15px !important; }
-    .admin-info p { font-size: 0.8rem !important; margin-bottom: 10px !important; text-align: justify !important; line-height: 1.5 !important; }
+    .admin-info h3 { font-size: 1.8rem !important; text-align: center !important; margin-bottom: 5px !important; }
+    .admin-info h4 { font-size: 1rem !important; text-align: center !important; margin-bottom: 15px !important; }
 
     /* Footer */
-    footer { padding: 25px 15px; margin-top: 30px; }
-    footer p { font-size: 0.75rem !important; margin-bottom: 15px !important; }
-    footer strong { font-size: 1.1rem !important; }
-    footer span { font-size: 0.8rem !important; }
+    footer { padding: 30px 20px; margin-top: 40px; }
+    footer p { font-size: 0.8rem !important; margin-bottom: 15px !important; line-height: 1.6 !important; }
 }
