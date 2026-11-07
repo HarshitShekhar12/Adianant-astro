@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .shop-img { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); background-color: #6a6a6a; }
+        .shop-img { width: 100%; height: 230px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); background-color: rgba(10, 15, 30, 0.7); padding: 10px; }
     </style>
 </head>
 <body>
@@ -38,40 +38,109 @@
 
     <div class="container">
         <h2 class="section-title">
-            <span class="lang-en">Online Gemstone Shop</span>
-            <span class="lang-hi">Online रत्न Shop</span>
+            <span class="lang-en">Navratna Gemstone Collection</span>
+            <span class="lang-hi">प्रामाणिक नवरत्न संग्रह</span>
         </h2>
         
-        <p class="lang-en" style="text-align: center; color: #cbd5e0; margin-bottom: 40px; font-size: 1.1rem;">Authentic, certified gemstones carefully selected to balance your cosmic energies.</p>
-        <p class="lang-hi" style="text-align: center; color: #cbd5e0; margin-bottom: 40px; font-size: 1.1rem;">आपकी ब्रह्मांडीय ऊर्जा को संतुलित करने के लिए प्रामाणिक और प्रमाणित रत्न।</p>
+        <p class="lang-en" style="text-align: center; color: #cbd5e0; margin-bottom: 40px; font-size: 1.1rem;">Authentic, 100% natural and spiritually energized gemstones to harmonize your planetary energies.</p>
+        <p class="lang-hi" style="text-align: center; color: #cbd5e0; margin-bottom: 40px; font-size: 1.1rem;">आपके नवग्रहों की ऊर्जा को संतुलित और जाग्रत करने के लिए 100% प्राकृतिक एवं अभिमंत्रित रत्न।</p>
 
         <div class="grid-3">
+            <!-- 1. Ruby / Manik (Sun) -->
             <div class="glass-card">
-                <img src="Screenshot 2026-09-16 225952.png" alt="Emerald Panna" class="shop-img">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.23 (1).jpeg" alt="Ruby Manik" class="shop-img">
+                <h3><span class="notranslate">Ruby (Manik)</span></h3>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Sun (Surya). Boosts leadership, vitality, fame, and royal authority in career.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">सूर्य (<span class="notranslate">Sun</span>) का रत्न। आत्मविश्वास, मान-सम्मान, नेतृत्व क्षमता और सरकारी कार्यों में सफलता दिलाता है।</p>
+                <button class="wa-btn" onclick="buy('Ruby (Manik) Gemstone')">
+                    <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
+                </button>
+            </div>
+
+            <!-- 2. Pearl / Moti (Moon) -->
+            <div class="glass-card">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.24.jpeg" alt="Natural Pearl Moti" class="shop-img">
+                <h3><span class="notranslate">Natural Pearl (Moti)</span></h3>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Moon (Chandra). Calms the mind, controls anxiety, and strengthens emotional harmony.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">चंद्रमा (<span class="notranslate">Moon</span>) का रत्न। मानसिक शांति, तनाव मुक्ति और भावनात्मक संतुलन प्रदान करता है।</p>
+                <button class="wa-btn" onclick="buy('Natural Pearl (Moti)')">
+                    <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
+                </button>
+            </div>
+
+            <!-- 3. Red Coral / Moonga (Mars) -->
+            <div class="glass-card">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.24 (1).jpeg" alt="Red Coral Moonga" class="shop-img">
+                <h3><span class="notranslate">Red Coral (Moonga)</span></h3>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Mars (Mangal). Enhances courage, physical stamina, willpower, and property success.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">मंगल (<span class="notranslate">Mars</span>) का रत्न। साहस, पराक्रम, ऊर्जा और भूमि-संपत्ति संबंधी मामलों में लाभकारी।</p>
+                <button class="wa-btn" onclick="buy('Red Coral (Moonga)')">
+                    <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
+                </button>
+            </div>
+
+            <!-- 4. Emerald / Panna (Mercury) -->
+            <div class="glass-card">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.25 (1).jpeg" alt="Emerald Panna" class="shop-img">
                 <h3><span class="notranslate">Emerald (Panna)</span></h3>
-                <p class="lang-en" style="color: #cbd5e0; text-align: center;">High-quality, certified gemstone to strengthen Mercury (Buddh). Brings clarity, intellect, and business growth.</p>
-                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">बुध (<span class="notranslate">Mercury</span>) को मजबूत करने के लिए प्रमाणित रत्न। स्पष्टता, बुद्धि और <span class="notranslate">Business</span> में वृद्धि लाता है।</p>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Mercury (Budh). Enhances intelligence, communication, business growth, and education.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">बुध (<span class="notranslate">Mercury</span>) का रत्न। बुद्धि, व्यापार में वृद्धि, संवाद कला और एकाग्रता को बढ़ाता है।</p>
                 <button class="wa-btn" onclick="buy('Emerald (Panna) Gemstone')">
                     <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
                 </button>
             </div>
 
+            <!-- 5. Yellow Sapphire / Pukhraj (Jupiter) -->
             <div class="glass-card">
-                <img src="Screenshot 2026-09-16 230021.png" alt="Yellow Sapphire Pukhraj" class="shop-img">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.26.jpeg" alt="Yellow Sapphire Pukhraj" class="shop-img">
                 <h3><span class="notranslate">Yellow Sapphire (Pukhraj)</span></h3>
-                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Authentic, certified gemstone to strengthen Jupiter (Guru). Attracts prosperity, fortune, and wisdom.</p>
-                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">बृहस्पति (<span class="notranslate">Jupiter</span>) को मजबूत करने के लिए प्रामाणिक रत्न। समृद्धि, सौभाग्य और ज्ञान को आकर्षित करता है।</p>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Jupiter (Guru). Brings immense wealth, higher wisdom, marital bliss, and spiritual growth.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">बृहस्पति (<span class="notranslate">Jupiter</span>) का रत्न। अपार धन, सौभाग्य, वैवाहिक सुख और उच्च ज्ञान की प्राप्ति कराता है।</p>
                 <button class="wa-btn" onclick="buy('Yellow Sapphire (Pukhraj) Gemstone')">
                     <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
                 </button>
             </div>
 
+            <!-- 6. Diamond / Heera (Venus) -->
             <div class="glass-card">
-                <img src="Screenshot 2026-09-16 230046.png" alt="Blue Sapphire Neelam" class="shop-img">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.26 (2).jpeg" alt="Diamond Heera" class="shop-img">
+                <h3><span class="notranslate">Diamond (Heera)</span></h3>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Venus (Shukra). Bestows beauty, luxury, relationship charm, artistic success, and prosperity.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">शुक्र (<span class="notranslate">Venus</span>) का रत्न। आकर्षण, विलासिता, दांपत्य जीवन में प्रेम और कलात्मक सफलता प्रदान करता है।</p>
+                <button class="wa-btn" onclick="buy('Diamond (Heera)')">
+                    <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
+                </button>
+            </div>
+
+            <!-- 7. Blue Sapphire / Neelam (Saturn) -->
+            <div class="glass-card">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.29.jpeg" alt="Blue Sapphire Neelam" class="shop-img">
                 <h3><span class="notranslate">Blue Sapphire (Neelam)</span></h3>
-                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Premium, certified gemstone to strengthen Saturn (Shani). Highly powerful; best worn after Kundali analysis.</p>
-                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">शनि (<span class="notranslate">Saturn</span>) को मजबूत करने के लिए प्रीमियम रत्न। अत्यधिक शक्तिशाली; <span class="notranslate">Kundali</span> विश्लेषण के बाद पहनना सर्वोत्तम है।</p>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Saturn (Shani). Extremely potent stone for quick career breakthroughs, discipline, and wealth protection.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">शनि (<span class="notranslate">Saturn</span>) का अत्यंत प्रभावशाली रत्न। त्वरित सफलता, सुरक्षा और अनुशासन के लिए <span class="notranslate">Kundali</span> अनुसार धारण करें।</p>
                 <button class="wa-btn" onclick="buy('Blue Sapphire (Neelam) Gemstone')">
+                    <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
+                </button>
+            </div>
+
+            <!-- 8. Hessonite / Gomed (Rahu) -->
+            <div class="glass-card">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.27 (2).jpeg" alt="Hessonite Gomed" class="shop-img">
+                <h3><span class="notranslate">Hessonite Garnet (Gomed)</span></h3>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Rahu. Clears confusion, guards against unseen enemies, and brings sudden windfall gains.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">राहु (<span class="notranslate">Rahu</span>) का रत्न। भ्रम दूर करता है, आकस्मिक धन लाभ कराता है और नकारात्मक ऊर्जा से रक्षा करता है।</p>
+                <button class="wa-btn" onclick="buy('Hessonite Garnet (Gomed)')">
+                    <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
+                </button>
+            </div>
+
+            <!-- 9. Cat's Eye / Lehsunia (Ketu) -->
+            <div class="glass-card">
+                <img src="WhatsApp Image 2026-11-07 at 19.42.28 (1).jpeg" alt="Cat's Eye Lehsunia" class="shop-img">
+                <h3><span class="notranslate">Cat's Eye (Lehsunia)</span></h3>
+                <p class="lang-en" style="color: #cbd5e0; text-align: center;">Gemstone for Ketu. Powerful talisman for spiritual detachment, shielding against evil eye, and sudden recovery.</p>
+                <p class="lang-hi" style="color: #cbd5e0; text-align: center;">केतु (<span class="notranslate">Ketu</span>) का रत्न। बुरी नज़र, अनहोनी से रक्षा, आध्यात्मिक उन्नति और गुप्त शत्रुओं पर विजय दिलाता है।</p>
+                <button class="wa-btn" onclick="buy('Cat\'s Eye (Lehsunia)')">
                     <span class="lang-en">Inquire to Buy</span><span class="lang-hi">खरीदने के लिए पूछें</span>
                 </button>
             </div>
